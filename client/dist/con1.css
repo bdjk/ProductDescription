@@ -23,3 +23,6 @@
 .sub1bottom {
   margin-top: 8px;
 }
+.imgZoom {
+  z-index: 100;
+}
