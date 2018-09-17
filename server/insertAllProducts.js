@@ -1,11 +1,9 @@
 var items = require("../data/sephoraData.json");
-var sequelize = require("./db/index");
-var Sequelize = require("sequelize");
+var Products = require("./db/products");
 
 var insertAllItems = function(items) {
   items.map(item =>
     Products.create({
-      id: item.id,
       brand: item.brand,
       product_name: item.product_name,
       product_price: item.product_price,
@@ -18,20 +16,6 @@ var insertAllItems = function(items) {
   );
 };
 
-const Products = sequelize.define("products", {
-  id: {
-    type: Sequelize.INTEGER,
-    primaryKey: true,
-    unique: true,
-    autoIncrement: true
-  },
-  brand: Sequelize.STRING,
-  product_name: Sequelize.STRING,
-  product_price: Sequelize.STRING,
-  product_rating: Sequelize.DECIMAL(10, 1),
-  product_loves: Sequelize.INTEGER,
-  product_img: Sequelize.STRING
-});
 Products.sync({ force: true })
   .then(() => {
     insertAllItems(items);
