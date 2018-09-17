@@ -5,6 +5,8 @@ import con3 from "../../dist/con3.css";
 import con4 from "../../dist/con4.css";
 import con5 from "../../dist/con5.css";
 import Zoomer from "react-image-zoom";
+import StarRatings from "react-star-ratings";
+import axios from "axios";
 
 class ItemDescription extends React.Component {
   constructor(props) {
@@ -15,6 +17,18 @@ class ItemDescription extends React.Component {
     };
     this.handleMouseHover = this.handleMouseHover.bind(this);
   }
+
+  componentDidMount() {
+    axios
+      .get("/api")
+      .then(function(response) {
+        console.log(response, "Proper get request!");
+      })
+      .catch(function(error) {
+        console.log(error, "Shitty get request");
+      });
+  }
+
   handleMouseHover() {
     this.setState(this.toggleHoverState);
   }
@@ -24,10 +38,6 @@ class ItemDescription extends React.Component {
       isHovering: !state.isHovering
     };
   }
-
-  // componentDidMount(){
-
-  // }
 
   render() {
     if (!this.state.isHovering) {
@@ -66,6 +76,26 @@ class ItemDescription extends React.Component {
           </div>
           <div className={con2.sub2size}>
             SIZE 1.7 oz/ 50 mL {"\u00A0"}•{"\u00A0"} ITEM 1778851
+          </div>
+          <div className={con2.reviewsBox}>
+            <div className={con2.stars}>
+              <StarRatings
+                rating={4.2}
+                starDimension="13px"
+                starRatedColor="black"
+                starSpacing="-3px"
+              />
+              <span> 107 reviews</span>
+              <span className={con2.divider} />
+              <span className={con2.loves}>
+                <span>
+                  <svg className={con2.lovesSVGblack}>
+                    <path d="M16.003 26c-.915 0-1.772-.354-2.417-1L2.364 13.78C.84 12.254 0 10.228 0 8.07 0 3.078 4.153-.012 8-.012c2.225 0 4.223.822 5.778 2.377L16 4.586l2.222-2.222C19.777.81 21.775-.013 24-.013c3.848 0 8 3.09 8 8.084 0 2.157-.84 4.184-2.364 5.708L18.413 25c-.643.645-1.5 1-2.41 1z" />
+                  </svg>
+                </span>
+                <span>10K loves</span>
+              </span>
+            </div>
           </div>
         </div>
         <div className={con3.subContainer3}>
