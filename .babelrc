@@ -1,5 +1,7 @@
 {
+  "plugins": ["transform-class-properties"],
   "presets": [
+    "react-native",
     [
       "env",
       {
@@ -10,6 +12,7 @@
   "env": {
     "test": {
       "presets": [
+        "react-native",
         [
           "env",
           {
