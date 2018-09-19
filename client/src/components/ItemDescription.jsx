@@ -93,7 +93,6 @@ class ItemDescription extends React.Component {
       var prodLoves = nFormatter(num);
     }
 
-    console.log(typeof this.state.img, "in the return");
     var photo = this.state.img;
 
     return (
