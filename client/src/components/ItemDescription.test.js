@@ -8,4 +8,9 @@ describe("Stateful Testing", () => {
     const hoverState = wrapper.state().isHovering;
     expect(hoverState).toEqual(false);
   });
+  it("Testing to see if sephora is hi", () => {
+    const wrapper = shallow(<ItemDescription />);
+    const sephora = wrapper.state().sephora;
+    expect(sephora).toEqual("hi");
+  });
 });
