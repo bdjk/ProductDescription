@@ -9,13 +9,13 @@ var APP_DIR = path.resolve(__dirname, "client/src");
 var config = {
   entry: APP_DIR + "/index.jsx",
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?/,
         include: APP_DIR,
-        loader: "babel",
+        loader: "babel-loader",
         query: {
-          presets: ["es2015", "react"]
+          presets: ["env", "react"]
         }
       },
       {
