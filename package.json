@@ -14,7 +14,8 @@
     }
   },
   "scripts": {
-    "start": "nodemon /server",
+    "migrate": "node ./server/insertAllProducts.js",
+    "start": "npm run migrate && nodemon /server",
     "build": "webpack --watch",
     "test": "jest"
   },

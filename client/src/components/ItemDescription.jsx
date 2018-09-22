@@ -28,7 +28,7 @@ class ItemDescription extends React.Component {
   getRequest() {
     var num = Math.floor(Math.random() * 104);
     axios
-      .get("/api", {
+      .get("http://54.183.96.251:4000/api", {
         params: {
           ID: num
         }
