@@ -3,11 +3,13 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const pg = require("./db/index.js");
 const Products = require("./db/products.js");
+const cors = require("cors");
 
 var app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
