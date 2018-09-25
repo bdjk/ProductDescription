@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const pg = require("./db/index.js");
 const Products = require("./db/products.js");
 const cors = require("cors");
 

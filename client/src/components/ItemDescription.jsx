@@ -28,7 +28,7 @@ class ItemDescription extends React.Component {
   getRequest() {
     var num = Math.floor(Math.random() * 104);
     axios
-      .get("http://54.183.96.251:4000/api", {
+      .get("http://54.183.12.2:4000/api", {
         params: {
           ID: num
         }
@@ -38,9 +38,11 @@ class ItemDescription extends React.Component {
         //   response.data,
         //   "Proper get request! SEPHORA GANG SEPHORA GANG SEPHORA GANG"
         // );
-        this.setState({ sephoraItem: response.data });
-        this.setState({ rating: Number(response.data.product_rating) });
-        this.setState({ img: response.data.product_img.toString() });
+        this.setState({
+          sephoraItem: response.data,
+          rating: Number(response.data.product_rating),
+          img: response.data.product_img.toString()
+        });
         console.log(this.state.img);
       })
       .catch(function(error) {
