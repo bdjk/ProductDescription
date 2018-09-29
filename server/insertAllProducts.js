@@ -4,6 +4,7 @@ var Products = require("./db/products");
 var insertAllItems = function(items) {
   return items.map(item =>
     Products.create({
+      id: item.id,
       brand: item.brand,
       product_name: item.product_name,
       product_price: item.product_price,
@@ -19,10 +20,10 @@ var insertAllItems = function(items) {
 Products.sync({ force: true })
   .then(() => {
     Promise.all(insertAllItems(items))
-      .then(() => {
-        console.log("All items inserted into DB");
-        process.exit();
-      })
-      .catch(e => console.error("Failed to seed DB: ", e));
+    .then(() => {
+      console.log("All items inserted into DB");
+      process.exit();
+    })
+    .catch(e => console.error("Failed to seed DB: ", e));
   })
   .catch(e => console.error("Error", e));

@@ -5,7 +5,8 @@ const sequelize = new Sequelize({
   username: process.env["DB_USER"],
   password: process.env["DB_PASS"] !== "" ? process.env["DB_PASS"] : null,
   port: process.env["DB_PORT"] !== "" ? process.env["DB_PORT"] : null,
-  dialect: "postgres"
+  dialect: "postgres", 
+  logging: false,
 });
 
 sequelize

@@ -15,7 +15,8 @@ class ItemDescription extends React.Component {
       isHovering: false,
       sephoraItem: [],
       sephora: "hi",
-      rating: 0
+      rating: 0,
+      img: ""
     };
     this.handleMouseHover = this.handleMouseHover.bind(this);
     this.getRequest = this.getRequest.bind(this);
@@ -27,8 +28,10 @@ class ItemDescription extends React.Component {
 
   getRequest() {
     var num = Math.floor(Math.random() * 104);
+    // console.log(num);
     axios
-      .get("http://54.183.12.2:4000/api", {
+      .get("/api/products", {
+      // .get("http://54.183.12.2:4000/api", {
         params: {
           ID: num
         }
@@ -42,8 +45,8 @@ class ItemDescription extends React.Component {
           sephoraItem: response.data,
           rating: Number(response.data.product_rating),
           img: response.data.product_img.toString()
-        });
-        console.log(this.state.img);
+        }, () => console.log(this.state));
+        
       })
       .catch(function(error) {
         console.log(error, "Shitty get request");
