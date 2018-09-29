@@ -1,4 +1,4 @@
-const Products = require("./db/products.js");
+const Products = require("./db/PostgreSQL/products.js");
 
 controller = {
   get: (req, res) => {

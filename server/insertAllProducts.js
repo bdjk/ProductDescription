@@ -1,5 +1,5 @@
 var items = require("../data/sephoraData.json");
-var Products = require("./db/products");
+var Products = require("./db/PostgreSQL/products");
 
 var insertAllItems = function(items) {
   return items.map(item =>
