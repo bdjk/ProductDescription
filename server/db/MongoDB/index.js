@@ -6,8 +6,7 @@ mongoose.connect(
 
 //make connection and have error and open signalling
 var db = mongoose.connection;
-db.on(
-  'error',
+db.on('error',
   console.error.bind(console, 'Error connecting to the DATABASE') 
 );
 db.once('open', () => {
