@@ -12,6 +12,8 @@ const Products = sequelize.define("products", {
   product_rating: Sequelize.DECIMAL(10, 1),
   product_loves: Sequelize.INTEGER,
   product_img: Sequelize.STRING
+}, {
+  timestamps: false
 });
 
 module.exports = Products;
