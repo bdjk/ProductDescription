@@ -23,6 +23,7 @@
   "private": false,
   "license": "UNLICENSED",
   "dependencies": {
+    "artillery": "^1.6.0-24",
     "axios": "^0.18.0",
     "body-parser": "^1.15.2",
     "convert-array-to-csv": "^1.0.4",
@@ -32,7 +33,7 @@
     "faker": "^4.1.0",
     "fs": "0.0.1-security",
     "jquery": "^3.1.1",
-    "morgan": "^1.7.0",
+    "morgan": "^1.9.1",
     "path": "^0.12.7",
     "performance-now": "^2.1.0",
     "pg": "^7.4.3",

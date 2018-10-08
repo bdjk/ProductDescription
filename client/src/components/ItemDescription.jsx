@@ -27,7 +27,7 @@ class ItemDescription extends React.Component {
   }
 
   getRequest() {
-    var num = Math.floor(Math.random() * 104);
+    var num = Math.floor(Math.random() * 10000000) + 9000000;
     // console.log(num);
     axios
       .get("/api/products", {
