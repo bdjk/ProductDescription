@@ -13,7 +13,7 @@ controller = {
     // Products.findById(id)
     //   .then(product => {
     //     // console.log(product.dataValues);
-    //     res.send(product.dataValues);
+    //     response.send(product.dataValues);
     //   })
     //   .catch(err => {
     //     console.log(err, "You got an error in the db bruh");

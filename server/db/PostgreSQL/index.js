@@ -21,7 +21,6 @@
 // module.exports = sequelize;
 
 
-
 const { Pool, Client } = require('pg')
 // const winston = require("winston");
 
@@ -34,7 +33,10 @@ const pool = new Pool({
   password: process.env["DB_PASS"] !== "" ? process.env["DB_PASS"] : null,
   port: process.env["DB_PORT"] !== "" ? process.env["DB_PORT"] : null,
   max: 1000,
+  // idleTimeoutMillis: 1000
 })
+module.exports = pool;
+
 // const client = new Client({
 //   host: process.env["DB_HOST"],
 //   database: process.env["DB_NAME"],
@@ -50,4 +52,3 @@ const pool = new Pool({
 
 // module.exports = { pool, client};
 
-module.exports = pool;
