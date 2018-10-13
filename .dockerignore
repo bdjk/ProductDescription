@@ -1,5 +1,12 @@
 /node_modules
 /.git
 /.dockerignore
-/.Dockerfile
+/Dockerfile
 /docker-compose.yml
+/aws-credentials.json
+/client/dist/bundle.js
+/client/dist/bundle.js.map
+/data/10M.tsv
+/newrelic_agent.log
+/data
+/client

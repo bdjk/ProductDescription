@@ -3,3 +3,5 @@ package-lock.json
 data/10M.tsv
 newrelic.js
 newrelic_agent.log
+aws-credentials.json
+.env

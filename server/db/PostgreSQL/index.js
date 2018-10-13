@@ -19,9 +19,8 @@
 //   });
 
 // module.exports = sequelize;
-
-
-const { Pool, Client } = require('pg')
+require('dotenv').config()
+const { Pool } = require('pg')
 // const winston = require("winston");
 
 // pools will use environment variables
@@ -37,6 +36,16 @@ const pool = new Pool({
 })
 module.exports = pool;
 
+
+
+
+
+
+
+
+
+
+
 // const client = new Client({
 //   host: process.env["DB_HOST"],
 //   database: process.env["DB_NAME"],
@@ -51,4 +60,3 @@ module.exports = pool;
 // })
 
 // module.exports = { pool, client};
-
