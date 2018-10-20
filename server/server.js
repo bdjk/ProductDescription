@@ -4,7 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 // const morgan = require("morgan");
-const routes = require('./router.js');
+// const routes = require('./router.js');
+const controller = require('./controller.js');
 const cors = require("cors");
 // const cluster = require('cluster')
 // const os = require('os')
@@ -40,10 +41,10 @@ else {
   app.use(cors());
   // app.use(morgan('dev'));
   
-  app.use('/api', routes);
+  // app.use('/api', routes);
   
   app.use(express.static(path.resolve(__dirname, "../client/dist")));
-  
+  app.get('/api/products', controller.get)
   app.listen(port, function() {
     console.log("Sephora listening on port " + port);
   });

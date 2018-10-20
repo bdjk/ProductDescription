@@ -27,14 +27,14 @@ class ItemDescription extends React.Component {
   }
 
   getRequest() {
-    var num = Math.floor(Math.random() * 10000000) + 9000000;
+    // var num = Math.floor(Math.random() * (10000000 - 9000000) + 9000000);
     // console.log(num);
     axios
       .get("/api/products", {
       // .get("http://54.183.12.2:4000/api", {
-        params: {
-          ID: num
-        }
+        // params: {
+        //   ID: num
+        // }
       })
       .then(response => {
         // console.log(

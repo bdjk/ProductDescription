@@ -9,15 +9,19 @@ module.exports = function(grunt) {
         bucket: "sephora-productdescription",
         region: "us-west-1"
       },
-      specificFiles: {
-        files: [{
-          src: "client/dist/bundle.js",
-          dest: "productdescription.js"
-        }, {
-          src: "data/10M.tsv",
-          dest: "10M.tsv"
-        }]
+      specificFile: {
+        src: "client/dist/bundle.js",
+        dest: "productdescription.js"
       }
+      // specificFiles: {
+      //   files: [{
+      //     src: "client/dist/bundle.js",
+      //     dest: "productdescription.js"
+      //   }, {
+      //     src: "data/10M.tsv",
+      //     dest: "10M.tsv"
+      //   }]
+      // }
     },
     
     watch: {

@@ -6,6 +6,7 @@ controller = {
     // console.log(req.query.ID);
     // var id = req.query.ID;
     var id = Math.floor(Math.random() * (10000000 - 9000000) + 9000000);
+    // console.log(id)
     pool.query(`SELECT * FROM products WHERE id > 9000000 AND id = ${id}`)
       .then(res => response.send(res.rows[0]))
       .catch(e => setImmediate(() => { throw e }))
